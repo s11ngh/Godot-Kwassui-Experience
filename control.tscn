@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba6nj7a7kwc8v"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_0vtow"]
+[ext_resource type="Texture2D" uid="uid://cg8i0ln705kby" path="res://assets/menu/Game Menu.jpg" id="1_gx22o"]
+[ext_resource type="Texture2D" uid="uid://bvtkk4tqi3ufg" path="res://assets/menu/Game Menu.png" id="3_28pgx"]
+[ext_resource type="AudioStream" uid="uid://bld5gsmn8puvp" path="res://assets/music/resonant-victory-glbml-22044.mp3" id="4_jkw3r"]
+[ext_resource type="Texture2D" uid="uid://d4abcrbbt1yf4" path="res://assets/menu/howtoplaybutton.png" id="5_i1h4j"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0vtow")
+
+[node name="GameMenu" type="Sprite2D" parent="."]
+position = Vector2(577, 327)
+scale = Vector2(0.597917, 0.594444)
+texture = ExtResource("1_gx22o")
+
+[node name="Playbutton" type="Sprite2D" parent="."]
+position = Vector2(560, 248)
+scale = Vector2(0.47594, 0.570796)
+texture = ExtResource("3_28pgx")
+
+[node name="PLAY" type="Button" parent="."]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 216.0
+offset_right = 682.0
+offset_bottom = 278.0
+flat = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jkw3r")
+volume_db = -10.0
+autoplay = true
+
+[node name="Howtoplaybutton" type="Sprite2D" parent="."]
+position = Vector2(1064, 48)
+scale = Vector2(0.296875, 0.355856)
+texture = ExtResource("5_i1h4j")
+
+[node name="HOW" type="Button" parent="."]
+layout_mode = 0
+offset_left = 988.0
+offset_top = 28.0
+offset_right = 1140.0
+offset_bottom = 68.0
+flat = true
+
+[connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HOW" to="." method="_on_how_pressed"]

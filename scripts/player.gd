@@ -34,7 +34,7 @@ func _input(event):
 		if event is InputEventKey:
 			if event.pressed and event.keycode == KEY_ESCAPE:
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-				get_tree().change_scene_to_file("res://control.tscn")
+				get_tree().change_scene_to_file("res://scenes/control.tscn")
 func _physics_process(delta: float) -> void:
 	var current_step_interval = walk_step_interval
 

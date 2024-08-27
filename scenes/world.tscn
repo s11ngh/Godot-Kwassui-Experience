@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://h2ab3kfhj41u"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_526fw"]
+[ext_resource type="AudioStream" uid="uid://mvaf0r6si1ya" path="res://assets/music/211457__pgi__sand_step.mp3" id="3_17w63"]
+[ext_resource type="Texture2D" uid="uid://dvuxo18v6n27k" path="res://assets/skybox asset/Screenshots/_0003_AllSkyFree_Screen_06.jpg" id="4_4rxxw"]
+[ext_resource type="AudioStream" uid="uid://b4or7t7sh7ko3" path="res://assets/music/cruising-down-8bit-lane-159615.mp3" id="5_5udhd"]
+[ext_resource type="AudioStream" uid="uid://ywwsowiac32j" path="res://assets/music/Let's get this adventure started.mp3" id="6_3pbbh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_10dbp"]
+size = Vector3(2000, 1, 2000)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_op7ds"]
+data = PackedVector3Array(-1000, 0.5, 1000, 1000, 0.5, 1000, -1000, -0.5, 1000, 1000, 0.5, 1000, 1000, -0.5, 1000, -1000, -0.5, 1000, 1000, 0.5, -1000, -1000, 0.5, -1000, 1000, -0.5, -1000, -1000, 0.5, -1000, -1000, -0.5, -1000, 1000, -0.5, -1000, 1000, 0.5, 1000, 1000, 0.5, -1000, 1000, -0.5, 1000, 1000, 0.5, -1000, 1000, -0.5, -1000, 1000, -0.5, 1000, -1000, 0.5, -1000, -1000, 0.5, 1000, -1000, -0.5, -1000, -1000, 0.5, 1000, -1000, -0.5, 1000, -1000, -0.5, -1000, 1000, 0.5, 1000, -1000, 0.5, 1000, 1000, 0.5, -1000, -1000, 0.5, 1000, -1000, 0.5, -1000, 1000, 0.5, -1000, -1000, -0.5, 1000, 1000, -0.5, 1000, -1000, -0.5, -1000, 1000, -0.5, 1000, 1000, -0.5, -1000, -1000, -0.5, -1000)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4w2rt"]
+height = 1.83
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2s53p"]
+height = 1.83
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qr5g1"]
+panorama = ExtResource("4_4rxxw")
+
+[sub_resource type="Sky" id="Sky_1hkto"]
+sky_material = SubResource("PanoramaSkyMaterial_qr5g1")
+
+[sub_resource type="Environment" id="Environment_36xog"]
+background_mode = 2
+sky = SubResource("Sky_1hkto")
+
+[node name="world" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0.281013, -0.0079593, 0.959671, -0.41356, 0.901353, 0.128575, 0, 438.612, 0)
+shadow_enabled = true
+
+[node name="base" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="base"]
+mesh = SubResource("BoxMesh_10dbp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="base/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="base/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_op7ds")
+
+[node name="player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 993.374, 154.357, 223.25)
+script = ExtResource("2_526fw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
+shape = SubResource("CapsuleShape3D_4w2rt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
+mesh = SubResource("CapsuleMesh_2s53p")
+
+[node name="head" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.89472, 2.08165e-12)
+
+[node name="camera" type="Camera3D" parent="player/head"]
+
+[node name="footstepsound" type="Node3D" parent="player"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="player/footstepsound"]
+stream = ExtResource("3_17w63")
+volume_db = -25.0
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_36xog")
+
+[node name="audio" type="Node3D" parent="."]
+
+[node name="background" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("5_5udhd")
+volume_db = -14.667
+autoplay = true
+
+[node name="letsgetstarted" type="AudioStreamPlayer2D" parent="audio"]
+stream = ExtResource("6_3pbbh")
+
+[node name="weather" type="Node3D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -48.0
+offset_right = 97.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press ESC to open Menu"

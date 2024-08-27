@@ -16,9 +16,9 @@ func _on_play_pressed() -> void:
 	
 	print("Press registerd") # Replace with function body.
 
-	get_tree().change_scene_to_file("res://world.tscn")
+	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 
 func _on_how_pressed() -> void:
 	print("how to play pressed")
-	get_tree().change_scene_to_file("res://howto_play.tscn")
+	get_tree().change_scene_to_file("res://scenes/howto_play.tscn")

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bj1q1dix5rmxp" path="res://scenes/Decoration/Plants/bush02.png" id="7_bxn22"]
 [ext_resource type="AudioStream" uid="uid://dvwl4obi3o5di" path="res://assets/music/KwassuiAmbientShort.mp3" id="7_j7fxm"]
 [ext_resource type="Texture2D" uid="uid://b7nutgqf4net1" path="res://scenes/Decoration/Plants/bush04.png" id="8_1hjkg"]
+[ext_resource type="PackedScene" uid="uid://dqts50xq27i1s" path="res://assets/player/cartoon_girl_high_poly.glb" id="8_ofmwe"]
 [ext_resource type="Texture2D" uid="uid://8tec887u5p27" path="res://scenes/Decoration/Plants/tree14.png" id="18_1fmku"]
 [ext_resource type="Texture2D" uid="uid://bbb8o4uv7kj70" path="res://scenes/Decoration/Plants/tree15.png" id="19_he6it"]
 [ext_resource type="Texture2D" uid="uid://sx0g3knsjjs7" path="res://scenes/Decoration/Plants/tree16.png" id="20_m364w"]
@@ -289,9 +290,6 @@ size = Vector3(2000, 1, 2000)
 data = PackedVector3Array(-1000, 0.5, 1000, 1000, 0.5, 1000, -1000, -0.5, 1000, 1000, 0.5, 1000, 1000, -0.5, 1000, -1000, -0.5, 1000, 1000, 0.5, -1000, -1000, 0.5, -1000, 1000, -0.5, -1000, -1000, 0.5, -1000, -1000, -0.5, -1000, 1000, -0.5, -1000, 1000, 0.5, 1000, 1000, 0.5, -1000, 1000, -0.5, 1000, 1000, 0.5, -1000, 1000, -0.5, -1000, 1000, -0.5, 1000, -1000, 0.5, -1000, -1000, 0.5, 1000, -1000, -0.5, -1000, -1000, 0.5, 1000, -1000, -0.5, 1000, -1000, -0.5, -1000, 1000, 0.5, 1000, -1000, 0.5, 1000, 1000, 0.5, -1000, -1000, 0.5, 1000, -1000, 0.5, -1000, 1000, 0.5, -1000, -1000, -0.5, 1000, 1000, -0.5, 1000, -1000, -0.5, -1000, 1000, -0.5, 1000, 1000, -0.5, -1000, -1000, -0.5, -1000)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4w2rt"]
-height = 1.83
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_2s53p"]
 height = 1.83
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qr5g1"]
@@ -1566,25 +1564,26 @@ mesh = SubResource("BoxMesh_10dbp")
 shape = SubResource("ConcavePolygonShape3D_op7ds")
 
 [node name="player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.0355, 56.3152, -84.1581)
+transform = Transform3D(0.194217, 0, -0.980959, 0, 1, 0, 0.980959, 0, 0.194217, 33.9665, 52.6908, -92.5281)
 script = ExtResource("2_526fw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
 shape = SubResource("CapsuleShape3D_4w2rt")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
-mesh = SubResource("CapsuleMesh_2s53p")
-
 [node name="head" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.89472, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.680573, 0)
 
 [node name="camera" type="Camera3D" parent="player/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111584, -0.00377274, -0.213539)
 
 [node name="footstepsound" type="Node3D" parent="player"]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="player/footstepsound"]
 stream = ExtResource("3_17w63")
 volume_db = -25.0
+
+[node name="cartoon_girl_high_poly" parent="player" instance=ExtResource("8_ofmwe")]
+transform = Transform3D(-0.798564, 0, 0.0479189, 0, 0.8, 0, -0.0479189, 0, -0.798564, 0, 0, 0)
 
 [node name="env" type="Node3D" parent="."]
 

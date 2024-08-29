@@ -1141,7 +1141,7 @@ shape = SubResource("CapsuleShape3D_4w2rt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.680573, 0)
 
 [node name="camera" type="Camera3D" parent="player/head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111584, -0.00377274, -0.213539)
+transform = Transform3D(1, 0, 8.58526e-08, 0, 1, 0, -8.33124e-08, 0, 1, 0.0400085, -0.333897, -0.309734)
 
 [node name="footstepsound" type="Node3D" parent="player"]
 
@@ -1150,7 +1150,7 @@ stream = ExtResource("3_17w63")
 volume_db = -25.0
 
 [node name="cartoon_girl_high_poly" parent="player" instance=ExtResource("8_ofmwe")]
-transform = Transform3D(-0.798564, 0, 0.0479189, 0, 0.8, 0, -0.0479189, 0, -0.798564, 0, 0, 0)
+transform = Transform3D(-0.598923, 0, 0.0359392, 0, 0.6, 0, -0.0359392, 0, -0.598923, 0, 0, 0)
 
 [node name="env" type="Node3D" parent="."]
 

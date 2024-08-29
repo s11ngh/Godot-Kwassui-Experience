@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cri4rjydoux51"]
+
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_lx7qq"]
+[ext_resource type="Texture2D" uid="uid://cjrbksbgb0tol" path="res://assets/menu/intro.jpg" id="2_w53hj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_lx7qq")
+
+[node name="Intro2" type="Sprite2D" parent="."]
+position = Vector2(575.75, 325.125)
+scale = Vector2(0.598177, 0.597917)
+texture = ExtResource("2_w53hj")
+
+[node name="backtomenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 844.0
+offset_top = 554.0
+offset_right = 1092.0
+offset_bottom = 611.0
+flat = true
+
+[connection signal="pressed" from="backtomenu" to="." method="_on_backtomenu_pressed"]

@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba6nj7a7kwc8v"]
+[gd_scene load_steps=4 format=3 uid="uid://ba6nj7a7kwc8v"]
 
 [ext_resource type="Script" path="res://scripts/control.gd" id="1_0vtow"]
-[ext_resource type="Texture2D" uid="uid://cg8i0ln705kby" path="res://assets/menu/Game Menu.jpg" id="1_gx22o"]
-[ext_resource type="Texture2D" uid="uid://bvtkk4tqi3ufg" path="res://assets/menu/Game Menu.png" id="3_28pgx"]
+[ext_resource type="Texture2D" uid="uid://ifb7m41mew8f" path="res://assets/menu/IMG_0270.JPG" id="3_4gnbb"]
 [ext_resource type="AudioStream" uid="uid://dcon2n11ltfy" path="res://assets/music/Kwassui_Founder's_Day_Song_fixed.mp3" id="4_6eyo3"]
-[ext_resource type="Texture2D" uid="uid://d4abcrbbt1yf4" path="res://assets/menu/howtoplaybutton.png" id="5_i1h4j"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -15,22 +13,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0vtow")
 
-[node name="GameMenu" type="Sprite2D" parent="."]
-position = Vector2(577, 327)
-scale = Vector2(0.597917, 0.594444)
-texture = ExtResource("1_gx22o")
-
-[node name="Playbutton" type="Sprite2D" parent="."]
-position = Vector2(560, 248)
-scale = Vector2(0.47594, 0.570796)
-texture = ExtResource("3_28pgx")
-
-[node name="PLAY" type="Button" parent="."]
+[node name="Start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 438.0
-offset_top = 216.0
+offset_left = 469.0
+offset_top = 276.0
+offset_right = 681.0
+offset_bottom = 338.0
+flat = true
+
+[node name="Intro" type="Button" parent="."]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 351.0
+offset_right = 680.0
+offset_bottom = 413.0
+flat = true
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 439.0
 offset_right = 682.0
-offset_bottom = 278.0
+offset_bottom = 501.0
 flat = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
@@ -38,18 +42,11 @@ stream = ExtResource("4_6eyo3")
 volume_db = -10.0
 autoplay = true
 
-[node name="Howtoplaybutton" type="Sprite2D" parent="."]
-position = Vector2(1064, 48)
-scale = Vector2(0.296875, 0.355856)
-texture = ExtResource("5_i1h4j")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575, 323)
+scale = Vector2(0.595833, 0.596296)
+texture = ExtResource("3_4gnbb")
 
-[node name="HOW" type="Button" parent="."]
-layout_mode = 0
-offset_left = 988.0
-offset_top = 28.0
-offset_right = 1140.0
-offset_bottom = 68.0
-flat = true
-
-[connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="HOW" to="." method="_on_how_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Intro" to="." method="_on_intro_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

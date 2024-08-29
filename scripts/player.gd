@@ -5,9 +5,9 @@ extends CharacterBody3D
 @onready var footstep_player = $footstepsound/AudioStreamPlayer3D
 
 var speed = 5.0
-const jump_velocity = 10
+const jump_velocity = 4
 const walking_speed = 5.0 
-const sprinting_speed = 10
+const sprinting_speed = 8
 const mouse_sens = 0.2
 
 var lerp_speed = 10.0

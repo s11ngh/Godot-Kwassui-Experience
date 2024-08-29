@@ -29,6 +29,22 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:foundation": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:staircenter": {
+"generate/physics": true
+},
+"PATH:stairseast": {
+"generate/physics": true
+},
+"PATH:stairswest": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

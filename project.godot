@@ -11,6 +11,8 @@ config_version=5
 [application]
 
 config/name="Game"
+config/version="1"
+run/main_scene="res://scenes/control.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -53,3 +55,8 @@ sprint={
 [physics]
 
 3d/default_gravity=20.0
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

@@ -1570,19 +1570,19 @@ mesh = SubResource("ArrayMesh_ekhfg")
 skeleton = NodePath("")
 
 [node name="tree22" type="MeshInstance3D" parent="Plants"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.966, 49.839, -42.5341)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.966, 52.2267, -42.5341)
 material_override = SubResource("StandardMaterial3D_7qkrx")
 mesh = SubResource("ArrayMesh_tdngv")
 skeleton = NodePath("")
 
 [node name="tree23" type="MeshInstance3D" parent="Plants"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5961, 51.6218, -45.479)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5961, 52.2767, -45.479)
 material_override = SubResource("StandardMaterial3D_62lrf")
 mesh = SubResource("ArrayMesh_bogxb")
 skeleton = NodePath("")
 
 [node name="tree24" type="MeshInstance3D" parent="Plants"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.213, 53.306, -40.207)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.213, 52.5994, -40.207)
 material_override = SubResource("StandardMaterial3D_u5b12")
 mesh = SubResource("ArrayMesh_vgpw1")
 skeleton = NodePath("")
@@ -2549,7 +2549,7 @@ mesh = SubResource("ArrayMesh_k66lg")
 skeleton = NodePath("")
 
 [node name="tree28" type="MeshInstance3D" parent="Plants"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.9366, 56.942, -22.4221)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.9366, 53.9281, -22.4221)
 material_override = SubResource("StandardMaterial3D_62lrf")
 mesh = SubResource("ArrayMesh_bogxb")
 skeleton = NodePath("")

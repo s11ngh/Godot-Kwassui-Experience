@@ -1,5 +1,5 @@
 extends Control
-
+@onready var click = $ClickSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 func _on_play_pressed() -> void:
 	
 	print("Press registerd") # Replace with function body.
-
+	click.play()
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 
@@ -23,8 +23,10 @@ func _on_play_pressed() -> void:
 
 func _on_intro_pressed() -> void:
 	print("intro register")
+	click.play()
 	get_tree().change_scene_to_file("res://scenes/intro.tscn")
 
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	click.play()
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")

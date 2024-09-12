@@ -1,10 +1,10 @@
 # Explore Kwassui: A School with a Mission 
 **Exploring Kwassui** is a virtual heritage game that takes players through the historic Kwassui Missionary School for Girls in Nagasaki, Japan. Explore a recreated version of the school building based on historical floor plans and photographs, and uncover stories of education, resilience, and cultural exchange.
+[CLICK HERE TO PLAY](https://uhjjwal.itch.io/explorekwassui)
 
 ## Table of Contents
 - [Features](#features)
 - [Screenshots](#screenshots)
-- [Play the Game](#play-the-game)
 - [Run Locally](#run-locally)
 - [Upload to Itch.io](#upload-to-itchio)
 - [Contributing](#contributing)
